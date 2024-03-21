@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona rejestracji</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="registrationForm" class="login-form">
+            <h2>Rejestracja</h2>
+            <div class="form-group">
+                <label for="firstName">Imię:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nazwisko:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="nickname">Nick:</label>
+                <input type="text" id="nickname" name="nickname" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Hasło:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="invitationCode">Kod zaproszenia:</label>
+                <input type="text" id="invitationCode" name="invitationCode">
+            </div>
+            <button type="submit">Zarejestruj się</button>
+            <p>Masz już konto? <a href="index.html">Zaloguj się</a></p>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/validation.js"></script>
+</body>
+</html>

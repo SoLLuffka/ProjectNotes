@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notatki</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/github-dark.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img src="IMG/logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">Strona główna</a></li>
+                <li><a href="notes.html">Notatki</a></li>
+                <li><a href="about.html">O stronie</a></li>
+                <li><a href="manager.html">Manadzer</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="register.html" class="btn"><i class="fas fa-user-plus"></i>Rejestracja</a>
+            <a href="index.html" class="btn"><i class="fas fa-sign-in-alt"></i>Logowanie</a>
+        </div>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Notatki</h1>
+        </header>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <div class="lesson-info">
+                    <span class="lesson-number">Lekcja #<span id="displayedLessonNumber">1</span></span>
+                    <span class="lesson-title" id="displayedLessonTitle">Tytuł Lekcji</span>
+                </div>
+                <div class="lesson-navigation">
+                    <button id="prevLesson" class="nav-button"><i class="fas fa-arrow-left"></i> Poprzednia</button>
+                    <select id="lessonSelect" class="lesson-select">
+                        <!-- Opcje lekcji zostaną tutaj wypełnione dynamicznie -->
+                    </select>
+                    <button id="nextLesson" class="nav-button">Następna <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            <div class="lesson-content" id="displayedLessonContent">
+                <!-- Treść lekcji zostanie tutaj wypełniona dynamicznie -->
+            </div>
+            <div class="example-code" id="displayedExampleCode">
+                <!-- Przykładowy kod zostanie tutaj wypełniony dynamicznie -->
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            hljs.highlightAll();
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/get_notes.js"></script>
+</body>
+</html>

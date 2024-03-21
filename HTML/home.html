@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img src="IMG/logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">Strona główna</a></li>
+                <li><a href="notes.html">Notatki</a></li>
+                <li><a href="about.html">O stronie</a></li>
+                <li><a href="manager.html">Manadzer</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="register.html" class="btn"><i class="fas fa-user-plus"></i>Rejestracja</a>
+            <a href="index.html" class="btn"><i class="fas fa-sign-in-alt"></i>Logowanie</a>
+        </div>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Strona Główna</h1>
+        </header>
+        <!-- Treść główna strony -->
+        <div class="main-content">
+            <div class="dev-logs-and-users">
+                <div class="dev-logs">
+                    <h2>Dev&Logs</h2>
+                    <div class="log">
+                        <button class="log-title">Nazwa Dev Loga 1</button>
+                        <div class="log-content" style="display: none;">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae, doloribus nisi velit eius accusamus dolores harum, animi at iusto veritatis sequi molestias quaerat quasi. Sit vel mollitia tenetur cumque animi.
+                        </div>
+                    </div>
+                    <div class="log">
+                        <button class="log-title">Nazwa Dev Loga 2</button>
+                        <div class="log-content" style="display: none;">
+                            Pełny opis Dev Loga 2...
+                        </div>
+                    </div>
+                </div>
+                <div class="user-list">
+                    <h2>Użytkownicy</h2>
+                    <ul id="userList">
+                        <!-- Przykładowi użytkownicy -->
+                        
+                        <!-- i tak dalej -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/user.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

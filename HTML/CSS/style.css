@@ -1,0 +1,531 @@
+* {
+    box-sizing: border-box; /* Ustawienie box-sizing dla wszystkich elementów */
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Pozostanie na miejscu podczas przewijania */
+    top: 0;
+    left: 0;
+}
+
+.sidebar img.logo {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #ddd;
+}
+
+.submenu {
+    position: relative;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    left: 100%; /* Aby rozwijane menu było po prawej stronie zakładki */
+    top: 0;
+    min-width: 150px; /* Minimalna szerokość rozwijanego menu */
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: none; /* Usuwamy obramowanie po lewej stronie */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.sub-menu li a {
+    padding: 10px;
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.sub-menu li a:hover {
+    background-color: #eaeaea;
+}
+
+.sub-btn .fas {
+    margin-left: 5px;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 0;
+    margin-left: 200px;
+}
+
+.content header {
+    background-color: #f4f4f4;
+    padding: 40px;
+    margin: 0;
+}
+
+.content header h1 {
+    margin: 0;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden; /* Zapobieganie rozszerzaniu się poza kontener */
+}
+
+.main-content {
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.dev-logs-and-users {
+    display: flex;
+    flex-wrap: nowrap; /* Nie pozwala elementom przenosić się do nowej linii */
+}
+
+.dev-logs {
+    flex: 1 50%; /* Umożliwia rozciąganie się */
+    background-color: #f4f4f4; /* Taki sam kolor tła jak sidebar */
+    border: 1px solid #ddd; /* Obramowanie jak w sidebar */
+    padding: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 20px; /* Odstęp między divami */
+    min-height: 100px; /* Minimalna wysokość, aby uniknąć kurczenia */
+}
+
+.dev-logs .log-content {
+    max-width: 100%; /* Maksymalna szerokość treści, aby nie rozszerzała się poza diva */
+    overflow: auto; /* Przewijanie treści, jeśli zajdzie taka potrzeba */
+}
+
+.dev-logs h2 {
+    /* Stylizacja nagłówka analogiczna do sidebar */
+    margin-bottom: 20px; /* Dodaje odstęp między nagłówkiem a wpisami logów */
+}
+
+.log {
+    border: 1px solid #ddd; /* Obramowanie dla każdego kafelka logu */
+    margin-bottom: 5px; /* Odstęp między kafelkami */
+}
+
+.log-title {
+    background-color: #f4f4f4; /* Jasny kolor tła dla kafelka logu */
+    color: #333;
+    padding: 10px;
+    margin: 0; /* Usuwa domyślny margines */
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s;
+}
+
+.log-title:hover {
+    background-color: #ccc; /* Ciemniejszy kolor tła po najechaniu myszką */
+}
+
+.log-content {
+    display: none; /* Domyślnie ukryta treść logów */
+    padding: 10px;
+    border-top: 1px solid #ddd; /* Obramowanie na górze, łączące się z log-title */
+    overflow: auto; /* Dodaje paski przewijania jeśli treść jest za długa */
+    word-wrap: break-word; /* Łamie długie ciągi tekstów, aby nie wychodziły poza element */
+    max-height: 400px; /* Ustaw maksymalną wysokość dla rozwiniętego div */
+}
+
+.user-list {
+    flex: 1; /* Umożliwia rozciąganie się */
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.user-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-list ul li {
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.status {
+    font-size: 0.8em;
+}
+
+.status.online {
+    color: green;
+}
+
+.status.offline {
+    color: red;
+}
+
+.sidebar-bottom {
+    padding: 10px;
+    margin-top: auto;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn i {
+    margin-right: 5px;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #ddd;
+    border: none;
+}
+
+.notes-container {
+    display: flex;
+    width: 100%;
+}
+
+.notes-list, .languages-list {
+    flex: 1; /* Obie kolumny zajmują równo miejsce */
+    margin-right: 20px; /* Dodaje odstęp między kolumnami */
+    margin-top: 20px;
+}
+
+.notes-list {
+    background-color: #f4f4f4; /* Tło dla notatek */
+    padding: 20px; /* Padding wewnątrz diva z notatkami */
+    border: 1px solid #ddd; /* Obramowanie */
+    margin-right: 20px; /* Dodaje odstęp od kolumny z językami */
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.languages-list {
+    background-color: #f4f4f4; /* Tło dla języków */
+    padding: 20px; /* Padding wewnątrz diva z językami */
+    border: 1px solid #ddd; /* Obramowanie */
+    box-sizing: border-box;
+}
+
+.note {
+    border-bottom: 1px solid #ddd; /* Obramowanie dla każdej notatki */
+    padding-bottom: 10px; /* Odstęp na dole notatki */
+    margin-bottom: 10px; /* Odstęp między notatkami */
+}
+
+.about-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    margin: 20px;
+    margin-top: 30px;
+}
+
+.about-section h2, .about-section h3 {
+    color: #333;
+}
+
+.author-info, .contributors, .fun-description {
+    margin-bottom: 20px;
+}
+
+.author-info p, .contributors ul, .fun-description p {
+    color: #666;
+    line-height: 1.5;
+}
+
+.author-info a, .contributors a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.author-info a:hover, .contributors a:hover {
+    text-decoration: underline;
+}
+
+.author-info a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.author-info a:hover {
+    color: #007bff;
+}
+
+.about-section h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Możesz dostosować kolor */
+}
+
+.dev-logs h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.dev-logs h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Możesz dostosować kolor */
+}
+
+.user-list h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.user-list h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Możesz dostosować kolor */
+}
+
+.author-nick {
+    color: purple !important;
+}
+
+.faq-section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+}
+
+.faq-section h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.faq-item h3 {
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.faq-item p {
+    margin: 5px 0 15px;
+    color: #666;
+}
+
+.lesson-container {
+    width: 100%;
+    height: 85vh; /* Ustawienie wysokości na całą dostępną wysokość widoku */
+    padding: 20px;
+    overflow: auto;
+}
+
+.lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.lesson-navigation {
+    text-align: right;
+    flex-grow: 1; /* Pozwala elementowi rozciągnąć się, aby zająć dostępną przestrzeń */
+}
+
+.lesson-info {
+    text-align: left;
+}
+
+.lesson-navigation {
+    text-align: right;
+}
+
+.lesson-info {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em; /* Zwiększenie rozmiaru czcionki */
+}
+
+.lesson-number {
+    margin-right: 10px; /* Dodanie odstępu między numerem a tematem lekcji */
+    font-weight: bold; /* Pogrubienie numeru lekcji */
+}
+
+.nav-button {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.lesson-select {
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.manager-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.notes-form-container, .devlogs-form-container {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+}
+
+.notes-form-container {
+    margin-right: 5px;
+}
+
+.devlogs-form-container {
+    margin-left: 5px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"], form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #eaeaea;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.devlogs-form-container h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.devlogs-form-container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Możesz dostosować kolor */
+}
+
+.notes-form-container h2 {
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.notes-form-container h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Możesz dostosować kolor */
+}
+
+.role-admin {
+    color: red;
+}
+
+.role-user {
+    color: green;
+}

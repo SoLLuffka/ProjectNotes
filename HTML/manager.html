@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <img src="IMG/logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="home.html">Strona główna</a></li>
+                <li><a href="notes.html">Notatki</a></li>
+                <li><a href="about.html">O stronie</a></li>
+                <li><a href="manager.html">Manadzer</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="register.html" class="btn"><i class="fas fa-user-plus"></i>Rejestracja</a>
+            <a href="index.html" class="btn"><i class="fas fa-sign-in-alt"></i>Logowanie</a>
+        </div>
+    </div>
+    <div class="content">
+        <header>
+            <h1>Menadzer</h1>
+        </header>
+        <div class="manager-container">
+            <div class="notes-form-container">
+                <h2>Dodaj Notatkę Lekcji</h2>
+                <form id="notesForm">
+                    <label for="lessonNumber">Numer Lekcji:</label>
+                    <input type="text" id="lessonNumber" name="lessonNumber">
+        
+                    <label for="lessonTitle">Temat Lekcji:</label>
+                    <input type="text" id="lessonTitle" name="lessonTitle">
+        
+                    <label for="lessonContent">Treść Lekcji:</label>
+                    <textarea id="lessonContent" name="lessonContent"></textarea>
+        
+                    <label for="lessonCode">Przykładowy Kod:</label>
+                    <textarea id="lessonCode" name="lessonCode"></textarea>
+        
+                    <button type="submit">Dodaj Notatkę</button>
+                </form>
+            </div>
+        
+            <div class="devlogs-form-container">
+                <h2>Dodaj DevLog</h2>
+                <form id="devlogsForm">
+                    <label for="devlogNumber">Numer DevLoga:</label>
+                    <input type="text" id="devlogNumber" name="devlogNumber">
+        
+                    <label for="devlogTitle">Nazwa DevLoga:</label>
+                    <input type="text" id="devlogTitle" name="devlogTitle">
+        
+                    <label for="devlogContent">Treść DevLoga:</label>
+                    <textarea id="devlogContent" name="devlogContent"></textarea>
+        
+                    <button type="submit">Dodaj DevLog</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="JS/notes_manager.js"></script>
+</body>
+</html>
