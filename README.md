@@ -1,11 +1,5 @@
 # ProjectNotes
 
-## Brief Description
-ProjectNotes is an interactive note management platform that enables users to create, organize, and share their notes and devlogs online. Ideal for developers, students, and anyone needing a centralized place to store important information and ideas, it offers a robust solution for personal and collaborative note-taking.
-
-## Introduction
-This project is a website created with HTML, CSS, JavaScript (Ajax), and PHP. It's perfect for those seeking an effective platform for managing notes, which also offers social features like sharing devlogs with others.
-
 ## Features
 - **User Registration and Login:** Allows users to create their own accounts, enabling personalization and privacy of notes.
 - **Adding Notes and Devlogs:** Users can create and manage their notes and devlogs, providing a space to document project progress or learning.
