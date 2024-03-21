@@ -1,63 +1,53 @@
 # ProjectNotes
 
-Krótki opis projektu - co to za strona, do czego służy, jakie problemy rozwiązuje?
+## Brief Description
+ProjectNotes is an interactive note management platform that enables users to create, organize, and share their notes and devlogs online. Ideal for developers, students, and anyone needing a centralized place to store important information and ideas, it offers a robust solution for personal and collaborative note-taking.
 
-## Wprowadzenie
+## Introduction
+This project is a website created with HTML, CSS, JavaScript (Ajax), and PHP. It's perfect for those seeking an effective platform for managing notes, which also offers social features like sharing devlogs with others.
 
-Ten projekt to strona internetowa stworzona z użyciem HTML, CSS, JavaScript (Ajax) i PHP. Jest idealna dla osób poszukujących [tu wpisz, do kogo jest skierowany projekt, np. efektywnej platformy blogowej, interaktywnej strony informacyjnej itp.].
+## Features
+- **User Registration and Login:** Allows users to create their own accounts, enabling personalization and privacy of notes.
+- **Adding Notes and Devlogs:** Users can create and manage their notes and devlogs, providing a space to document project progress or learning.
 
-## Funkcje
-
-- Funkcja 1: Logowanie, rejstracja użytkowników.
-- Funkcja 2: Możliwość dodawania notatek, devlogów.
-
-## Technologie
-
-Projekt wykorzystuje następujące technologie:
-
+## Technologies
+The project utilizes the following technologies:
 - HTML5
 - CSS3
-- JavaScript (z Ajax)
+- JavaScript (with Ajax)
 - PHP
 
-## Instalacja
+## Installation
+Instructions for setting up the project locally.
 
-Instrukcje dotyczące uruchomienia projektu lokalnie.
+### Requirements
+- A web server with PHP support (e.g., Apache, Nginx)
+- PHP version 7.4 or newer
+- Any web browser supporting HTML5 and JavaScript
 
-### Wymagania
+### Steps
+1. Clone the project repository using Git: `git clone https://github.com/SoLLuffka/ProjektNotatki.git`.
+2. Move the project files to your web server's directory.
+3. Import the `Notatki4I.sql` file into phpMyAdmin.
+4. To create a user account, add an invitation key to the `invitationkeys` table in your database.
+5. Open your web browser and navigate to your server's location (e.g., `http://localhost/ProjektNotatki`).
+6. Log in using the default credentials (Login: `Test3`, Password: `TestowyTest123`).
 
-- Serwer WWW z obsługą PHP (np. Apache, Nginx)
-- PHP w wersji X.X lub nowszej
-- Dowolna przeglądarka internetowa wspierająca HTML5 i JavaScript
+## Usage
+After logging in, users can create new notes and devlogs using a simple interface. Notes can be edited, deleted, and organized according to the user's needs.
 
-### Kroki
+## Contributing
+If you'd like to contribute to the project:
+1. Fork the repository.
+2. Create your feature branch (`git checkout -b feature/YourFeature`).
+3. Commit your changes (`git commit -am 'Added my feature'`).
+4. Push to the branch (`git push origin feature/YourFeature`).
+5. Create a new Pull Request.
 
-1. Sklonuj repozytorium projektu używając Git:
-2. Przenieś pliki projektu do katalogu serwera WWW.
-3. Zaimportuj bazę do phpMyadmin oraz jeżeli chcesz stworzyć użytkownika to dodaj do tabeli "invitationkeys" klucz aby można było stowrzyć konto.
-4. Otwórz przeglądarkę i przejdź do lokalizacji serwera (np. `http://localhost/nazwa-projektu`).
-5. Domyślny login to Login:Test3, Password:TestowyTest123
+## License
+This project is made available under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit [http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/) or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-## Użycie
-
-Tworzenie, logowanie do kont. Dodawanie notatek i devlogów.
-
-## Współpraca
-
-Jeśli chcesz przyczynić się do rozwoju projektu:
-
-1. Forknij repozytorium.
-2. Stwórz brancha dla Twojej funkcjonalności (`git checkout -b feature/TwojaFunkcjonalnosc`).
-3. Commituj swoje zmiany (`git commit -am 'Dodano moją funkcjonalność'`).
-4. Push do brancha (`git push origin feature/TwojaFunkcjonalnosc`).
-5. Utwórz Pull Request.
-
-## Licencja
-
-Licencji Creative Commons Attribution 4.0 International License. Aby zobaczyć kopię tej licencji, odwiedź [http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/) lub wyślij list do Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
-## Kontakt
-
+## Contact
 Email: pl.kl0se.pl@gmail.com
 
-Link do projektu: https://github.com/SoLLuffka/ProjektNotatki
+Project Link: [https://github.com/SoLLuffka/ProjektNotatki](https://github.com/SoLLuffka/ProjektNotatki)
